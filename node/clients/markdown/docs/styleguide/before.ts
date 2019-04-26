@@ -1,7 +1,7 @@
 export default `
   # Using VTEX Styleguide
 
-  To use **VTEX's Styleguide**, you first need to add it as a dependency in your app's \`manifest.json\`
+  To use **VTEX Styleguide**, you first need to add it as a dependency in your app's \`manifest.json\`
 
   \`\`\`json
   {

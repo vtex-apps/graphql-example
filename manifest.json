@@ -1,0 +1,29 @@
+{
+  "name": "graphql-example",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "GraphQL Example",
+  "description": "Reference app for VTEX IO GraphQL Services",
+  "mustUpdateAt": "2022-01-04",
+  "categories": [],
+  "dependencies": {},
+  "builders": {
+    "graphql": "1.x",
+    "node": "4.x"
+  },
+  "scripts": {
+    "prereleasy": "bash lint.sh"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "graphql-query"
+    }
+  ]
+}

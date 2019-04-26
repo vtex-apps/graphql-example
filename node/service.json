@@ -1,0 +1,7 @@
+{
+  "memory": 256,
+  "ttl": 10,
+  "timeout": 1,
+  "minReplicas": 2,
+  "maxReplicas": 5
+}

@@ -1,14 +1,9 @@
 import { IOClients } from '@vtex/api'
 
-import { BookClient } from './book'
-import { MarkdownClient } from './markdown'
+import { MasterData } from './masterdata'
 
 export class Clients extends IOClients {
-  get book() {
-    return this.getOrSet('book', BookClient)
-  }
-
-  get markdown() {
-    return this.getOrSet('markdown', MarkdownClient)
+  get masterData() {
+    return this.getOrSet('masterData', MasterData)
   }
 }

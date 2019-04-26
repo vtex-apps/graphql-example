@@ -24,6 +24,16 @@
     },
     {
       "name": "graphql-query"
+    },
+    {
+      "name": "POWER_USER_DS"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/dataentities/*"
+      }
     }
   ]
 }

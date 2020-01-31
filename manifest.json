@@ -8,6 +8,7 @@
   "categories": [],
   "dependencies": {},
   "builders": {
+    "docs": "0.x",
     "graphql": "1.x",
     "node": "4.x"
   },

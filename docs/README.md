@@ -53,30 +53,7 @@ type Query {
 
 > **Note** to know more on how these cache hints work, take a look at the [Apollo Server docs for caching](https://www.apollographql.com/docs/apollo-server/performance/caching/) 
 
-Since our GraphQL implementation uses a CDN (Cloud-Front) to cache query responses, `PRIVATE` queries should land in a different endpoint from `PUBLIC` ones (so the cookies are forwarded accordingly and do not break the query _cacheability_). To achieve this behavior, we also need to annotate our client-side queries so the platform knows which endpoint to use.
-
-Suppose we want to query an order list. The query for listing the orders should be:
-
-```graphql
-query ListOrders @context(scope: "private") {
-  listOrders: {
-    id
-    description
-  }
-}
-```
-
-If we use `scope: "public"` instead of `scope: "private"`, the query will incorrectly land in the public endpoint, thus not forwarding the cookies, leading to a possible query failure due to lack of authorization. 
-
-### Extending existing types from other apps
-
-We allow an app to extend a type that was defined by another app. For this to happen, the app that defined that type needs to be in the extending app's  **manifest.json**, as a direct dependency. The  `@from`  directive should be used for this, as in the following example:
-
-```graphql
-extend type Product @from(app:  "vtex.products-graphql") {
-  brand: String
-}
-```
+Since our GraphQL implementation uses a CDN (Cloud-Front) to cache query responses, `PRIVATE` queries should land in a different endpoint from `PUBLIC` ones. Each endpoint have some configurations tweaks in the CDN and may lead to different behaviors. For example, to receive cookies in the backend, you need to be in a private route.
 
 ### Resolving conflicts (`@context` directive)
 
@@ -120,8 +97,6 @@ So, let's say that an app called `client-app`, that depends only on `products-gr
 
 We have an (for now, VTEX-only, internal) Splunk dashboard to show all metrics related to your app. You can find it at:
 
-https://splunk7.vtex.com/en-US/app/vtex_colossus/node_app_metrics
+https://splunk72.vtex.com/en-US/app/vtex_io_apps/node_app_metrics
 
 After linking this app and making some requests, you can select `vtex.graphql-example` and see the metrics for your app. **Don't forget to check the box Development, as you are linking your app in a development workspace**.
-
-For convenience, the link for the current version: https://splunk7.vtex.com/en-US/app/vtex_colossus/node_app_metrics?form.time.earliest=-30m%40m&form.time.latest=%40m&form.picked_context=false&form.picked_region=aws-us-east-*&form.picked_version=vtex.graphql-example%400.0.1

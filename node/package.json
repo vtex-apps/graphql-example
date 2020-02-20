@@ -6,7 +6,7 @@
     "@types/bluebird": "^3.5.25",
     "@types/node": "^10.12.17",
     "@types/ramda": "types/npm-ramda#dist",
-    "@vtex/api": "^3.8.1",
+    "@vtex/api": "6.x",
     "tslint": "^5.12.0",
     "tslint-config-vtex": "^2.1.0",
     "typescript": "^3.4.2"

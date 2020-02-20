@@ -1,4 +1,9 @@
-import { Service, ServiceContext } from '@vtex/api'
+import {
+  ParamsContext,
+  RecorderState,
+  Service,
+  ServiceContext,
+} from '@vtex/api'
 import { prop } from 'ramda'
 
 import { Clients } from './clients'
@@ -18,7 +23,7 @@ declare global {
 }
 
 // Export a service that defines resolvers and clients' options
-export default new Service<Clients>({
+export default new Service<Clients, RecorderState, ParamsContext>({
   clients: {
     implementation: Clients,
     options: {

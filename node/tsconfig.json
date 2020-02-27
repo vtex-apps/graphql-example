@@ -6,6 +6,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "allowJs": false,
+    "checkJs": false,
     "esModuleInterop": true,
     "noEmitOnError": true,
     "noImplicitReturns": true,

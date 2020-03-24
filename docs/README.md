@@ -2,9 +2,11 @@
 
 A reference app implementing a VTEX IO service with GraphQL resolvers.
 
+![GraphQL Server Architecture](https://user-images.githubusercontent.com/18706156/77382285-bf2d6c80-6d5e-11ea-9f39-2c30b3ec3672.jpg)
+
 We use [**Apollo Server**](https://www.apollographql.com/docs/apollo-server/) as the underlying framework along with some tweaks for our platform.
 
-For communicating with external services or other VTEX IO apps we use the [**node-vtex-api**](https://github.com/vtex/node-vtex-api), a VTEX set of utilities for Node services. You can import this package using NPM from `@vtex/api` (already imported on this project)
+For communicating with external services or other VTEX IO apps, we use the [**node-vtex-api**](https://github.com/vtex/node-vtex-api), a VTEX set of utilities for Node services. You can import this package using NPM from `@vtex/api` (already imported on this project)
 
 **Start from `graphq/schema.graphql` and `node/index.ts` and follow the comments and imports!**
 

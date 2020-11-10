@@ -1,4 +1,4 @@
-# To really understand GraphQL, go to http://graphql.org/guide/
+# To really understand GraphQL, go to https://graphql.org/learn/
 
 type Book {
   authors: [String!]

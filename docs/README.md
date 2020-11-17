@@ -57,6 +57,10 @@ type Query {
 
 Since our GraphQL implementation uses a CDN (Cloud-Front) to cache query responses, `PRIVATE` queries should land in a different endpoint from `PUBLIC` ones. Each endpoint have some configurations tweaks in the CDN and may lead to different behaviors. For example, to receive cookies in the backend, you need to be in a private route.
 
+### Caching requests when using public endpoint
+
+Requests to `graphql-server` using public endpoints are not cacheable, so they are given `cache-control` with `no-cache`. The way to override this behavior is to send the header `'x-vtex-cacheable': 'true'` on request.
+
 ### Resolving conflicts (`@context` directive)
 
 Let's say that another app called `rewards-graphql` also defines a field named `products` inside the `Query` type. If both apps live on the same workspace/account it will cause some requests to fail, since our GraphQL server won't be able to automatically figure out which app should resolve that query.

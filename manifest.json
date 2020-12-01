@@ -1,7 +1,7 @@
 {
   "name": "graphql-example",
   "vendor": "vtex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "GraphQL Example",
   "description": "Reference app for VTEX IO GraphQL Services",
   "mustUpdateAt": "2022-01-04",

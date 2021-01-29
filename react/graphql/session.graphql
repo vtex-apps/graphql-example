@@ -1,0 +1,12 @@
+query session {
+  session @context(provider: "vtex.session-client") {
+    ... on SessionSuccess {
+      id
+      namespaces
+    }
+    ... on SessionError {
+      type
+      message
+    }
+  }
+}

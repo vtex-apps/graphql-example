@@ -1,29 +1,12 @@
-import {
-  ParamsContext,
-  RecorderState,
-  Service,
-  ServiceContext,
-} from '@vtex/api'
-import { prop } from 'ramda'
+import { RecorderState, Service, IOClients, ServiceContext } from '@vtex/api'
 
 import { Clients } from './clients'
-import { book } from './resolvers/book'
-import { books } from './resolvers/books'
-import { deleteBook } from './resolvers/delete'
-import { editBook } from './resolvers/editBook'
-import { newBook } from './resolvers/newBook'
-import { source } from './resolvers/source'
-import { total } from './resolvers/total'
+import { updateSession } from './resolvers/updateSession'
+import { session } from './resolvers/session'
 
 const MEDIUM_TIMEOUT_MS = 2 * 1000
 
-declare global {
-  // We declare a global Context type just to avoid re-writing ServiceContext<Clients, State> in every handler and resolver
-  type Context = ServiceContext<Clients>
-}
-
-// Export a service that defines resolvers and clients' options
-export default new Service<Clients, RecorderState, ParamsContext>({
+export default new Service<IOClients, RecorderState, ServiceContext<Clients>>({
   clients: {
     implementation: Clients,
     options: {
@@ -34,19 +17,20 @@ export default new Service<Clients, RecorderState, ParamsContext>({
   },
   graphql: {
     resolvers: {
-      Book: {
-        cacheId: prop('id'),
+      Session: {
+        __resolveType(obj) {
+          if (obj.type) {
+            return 'SessionError'
+          }
+
+          return 'SessionSuccess'
+        },
       },
       Mutation: {
-        delete: deleteBook,
-        editBook,
-        newBook,
+        updateSession,
       },
       Query: {
-        book,
-        books,
-        source,
-        total,
+        session,
       },
     },
   },

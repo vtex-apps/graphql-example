@@ -27,10 +27,14 @@ $RECYCLE.BIN/
 
 # App specific
 node_modules/
+docs/_book/
 .tmp
-.vscode
+.idea
 npm-debug.log
 .build/
-.eslintrc
-*.orig
+lib
+dist
+build
+lerna-debug.log
 yarn-error.log
+*.orig

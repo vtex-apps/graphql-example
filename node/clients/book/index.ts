@@ -1,13 +1,14 @@
-import { ExternalClient, InstanceOptions, IOContext } from '@vtex/api'
+import type { InstanceOptions, IOContext } from '@vtex/api'
+import { ExternalClient } from '@vtex/api'
 import { find, findIndex, propEq } from 'ramda'
 
-import { Book, BookInput, Maybe } from '../../typings/custom'
+import type { Book, BookInput, Maybe } from '../../typings/custom'
 import mock from './mock'
 
 export class BookClient extends ExternalClient {
   private db = mock
 
-  constructor (context: IOContext, options?: InstanceOptions) {
+  constructor(context: IOContext, options?: InstanceOptions) {
     super('http://example.com', context, options)
   }
 
@@ -20,7 +21,10 @@ export class BookClient extends ExternalClient {
     const foundIndex = findIndex(propEq('id', id), this.db)
 
     if (foundIndex >= 0 && foundIndex < this.db.length) {
-      const newDb = [...this.db.slice(0, foundIndex), ...this.db.slice(foundIndex + 1)]
+      const newDb = [
+        ...this.db.slice(0, foundIndex),
+        ...this.db.slice(foundIndex + 1),
+      ]
 
       this.db = newDb
 

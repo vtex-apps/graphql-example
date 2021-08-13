@@ -4,11 +4,11 @@ import { BookClient } from './book'
 import { MarkdownClient } from './markdown'
 
 export class Clients extends IOClients {
-  get book() {
+  public get book() {
     return this.getOrSet('book', BookClient)
   }
 
-  get markdown() {
+  public get markdown() {
     return this.getOrSet('markdown', MarkdownClient)
   }
 }

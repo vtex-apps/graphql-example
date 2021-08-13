@@ -1,9 +1,5 @@
-import {
-  ParamsContext,
-  RecorderState,
-  Service,
-  ServiceContext,
-} from '@vtex/api'
+import type { ParamsContext, RecorderState, ServiceContext } from '@vtex/api'
+import { Service } from '@vtex/api'
 import { prop } from 'ramda'
 
 import { Clients } from './clients'

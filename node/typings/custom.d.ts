@@ -1,5 +1,3 @@
-import { ServiceContext } from '@vtex/api'
-
 export interface Book {
   authors: string[]
   cacheId?: string

@@ -1,4 +1,4 @@
-import { Book } from '../../typings/custom'
+import type { Book } from '../../typings/custom'
 
 const mock: Book[] = [
   {

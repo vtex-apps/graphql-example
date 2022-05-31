@@ -18,16 +18,17 @@ Queries, mutations and types defined on the `schema.graphql` will have theirs im
 
 ## About GraphQL
 
-It's important to  understand what GraphQL is and how it compares with other popular API standards, such as REST.
+It's important to understand what GraphQL is and how it compares with other popular API standards, such as REST.
 
 There are many resources out there that can help understand the basics, so let's list a few of them here:
 
--   [GraphQL website](http://graphql.org/learn/)
--   [How to GraphQL](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)
+- [GraphQL website](http://graphql.org/learn/)
+- [How to GraphQL](https://www.howtographql.com/basics/1-graphql-is-the-better-rest/)
 
 ## Recipes
 
 ### Configuring cache for specific queries
+
 Caching is one of the most important strategies for making applications **fast and responsive**. This is achieved by setting **cache control hints** in the GraphQL schema. Our GraphQL Server computes a cache expiration date by combining `@cacheControl` declarations from the fields returned by a specific request, whereas the props `maxAge` and `scope` can be defined. It errs on the safe side for requests with multiple `@cacheControl` declarations, so shorter `maxAge` results override longer, and `PRIVATE` scope overrides `PUBLIC`.
 
 - There are currently tree possible `maxAge`s _(LONG, MEDIUM and SHORT)_ and two possible `scope`s _(PRIVATE and PUBLIC)_.
@@ -53,7 +54,7 @@ type Query {
 }
 ```
 
-> **Note** to know more on how these cache hints work, take a look at the [Apollo Server docs for caching](https://www.apollographql.com/docs/apollo-server/performance/caching/) 
+> **Note** to know more on how these cache hints work, take a look at the [Apollo Server docs for caching](https://www.apollographql.com/docs/apollo-server/performance/caching/)
 
 Since our GraphQL implementation uses a CDN (Cloud-Front) to cache query responses, `PRIVATE` queries should land in a different endpoint from `PUBLIC` ones. Each endpoint have some configurations tweaks in the CDN and may lead to different behaviors. For example, to receive cookies in the backend, you need to be in a private route.
 
@@ -87,7 +88,7 @@ In some cases it might be hard for a client to know that a conflict can happen, 
 
 Both these problems can be solved by using the `@context` directive again, but this time using the `sender` argument. Basically, apps sending requests to `graphql-server` should include this directive announcing their names, so that it can restrict which parts of the schema can be accessed. Note that restricting the access also makes it easier for apps to know exactly when they'd need to specify a `provider`, since conflicts with apps they don't know about will never happen.
 
-So, let's say that an app called `client-app`, that depends only on `products-graphql` is sending a GraphQL request. Even if `rewards-graphql` is running in the current workspace it won't need to specify the provider anymore, just set the `sender`. 
+So, let's say that an app called `client-app`, that depends only on `products-graphql` is sending a GraphQL request. Even if `rewards-graphql` is running in the current workspace it won't need to specify the provider anymore, just set the `sender`.
 
 ```graphql
 {
@@ -98,6 +99,16 @@ So, let's say that an app called `client-app`, that depends only on `products-gr
 ```
 
 **Note:** If you are requesting GraphQL data from React apps that uses the `react` builder the `sender` argument **is already baked** into every request it makes.
+
+## 🗎 GraphQL documentation
+
+This project use as dependency the [graphql-markdown](https://github.com/exogen/graphql-markdown) project, to generate markdown documentation based on GraphQL schema.
+
+Do you need run this command below, in you terminal, to generate the documentation:
+
+```bash
+yarn graphql-markdown
+```
 
 ## Splunk Dashboard
 

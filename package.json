@@ -5,9 +5,7 @@
   "scripts": {
     "lint": "eslint --ext js,jsx,ts,tsx .",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
-    "graphql-markdown": "node graphql-markdown-generator.js",
-    "build": "graphql-schema-utilities --includeDirectives -s \"./graphql/**/*.{gql,graphql}\" -o ./merged.graphql",
-    "test": "graphql-markdown ./graphql/schema.graphql > blabla.md"
+    "graphql-markdown": "node graphql-markdown-generator.js"
   },
   "husky": {
     "hooks": {

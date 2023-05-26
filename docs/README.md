@@ -104,7 +104,7 @@ So, let's say that an app called `client-app`, that depends only on `products-gr
 
 This project use as dependency the [graphql-markdown](https://github.com/exogen/graphql-markdown) project, to generate markdown documentation based on GraphQL schema.
 
-Do you need run this command below, in you terminal, to generate the documentation:
+Do you need run this command below, in your terminal, to generate the documentation:
 
 ```bash
 yarn graphql-markdown

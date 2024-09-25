@@ -1,9 +1,9 @@
 {
-  "name": "graphql-example",
-  "vendor": "vtex",
-  "version": "0.3.0",
-  "title": "GraphQL Example",
-  "description": "Reference app for VTEX IO GraphQL Services",
+  "name": "sanity-resolver",
+  "vendor": "logicinfopartnerbr",
+  "version": "0.0.0-beta",
+  "title": "Sanity Graphql Resolver",
+  "description": "Sanity app for VTEX IO GraphQL Service",
   "mustUpdateAt": "2022-01-04",
   "categories": [],
   "dependencies": {},
@@ -25,6 +25,12 @@
     },
     {
       "name": "graphql-query"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "*.api.sanity.io/*"
+      }
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

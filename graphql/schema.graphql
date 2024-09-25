@@ -7,6 +7,12 @@ type Book {
   name: String
 }
 
+type StoreTemplatedCard {
+  _id: ID!
+  image: String
+  title: String
+}
+
 # It is necessary to generate input types for creating books
 # ref: http://graphql.org/graphql-js/mutations-and-input-types/
 input BookInput {
@@ -19,8 +25,10 @@ input BookInput {
 type Query {
   # Cache control can only be set at root fields
   book(id: ID!): Book
-  books(from: Int = 0, to: Int = 4): [Book] @cacheControl(scope: PUBLIC, maxAge: SHORT)
+  books(from: Int = 0, to: Int = 4): [Book]
+    @cacheControl(scope: PUBLIC, maxAge: SHORT)
   total: Int
+  storeTemplatedCards: [StoreTemplatedCard]
 
   """
   Returns a markdown source given an id

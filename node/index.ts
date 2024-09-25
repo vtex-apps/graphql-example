@@ -10,6 +10,7 @@ import { editBook } from './resolvers/editBook'
 import { newBook } from './resolvers/newBook'
 import { source } from './resolvers/source'
 import { total } from './resolvers/total'
+import { storeTemplatedCards } from './resolvers/storeTemplatedCards'
 
 const MEDIUM_TIMEOUT_MS = 2 * 1000
 
@@ -43,6 +44,7 @@ export default new Service<Clients, RecorderState, ParamsContext>({
         books,
         source,
         total,
+        storeTemplatedCards,
       },
     },
   },

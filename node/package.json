@@ -8,6 +8,7 @@
     "@types/ramda": "types/npm-ramda#dist",
     "@vtex/api": "6.47.0",
     "@vtex/tsconfig": "^0.5.6",
+    "logicinfopartnerbr.sanity-resolver": "https://sanity--logicinfopartnerbr.myvtex.com/_v/private/typings/linked/v1/logicinfopartnerbr.sanity-resolver@0.0.0-beta+build1727356291/public/@types/logicinfopartnerbr.sanity-resolver",
     "typescript": "3.9.7"
   },
   "scripts": {

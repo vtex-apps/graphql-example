@@ -6,4 +6,4 @@ export default `
   This example is a classical list-detail problem, where there is a list rendered in rows. Each row, when clicked, takes the user to a details page where more info can be seen about the element.
 
   In this topic, we use the detail component of the prior topic and focus on the list pagination.
-`
+`;

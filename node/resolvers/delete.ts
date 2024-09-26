@@ -1,9 +1,5 @@
 interface Args {
-  id: string
+  id: string;
 }
 
-export const deleteBook = (
-  _: any,
-  { id }: Args,
-  { clients: { book: booksClient } }: Context
-) => booksClient.delete(id)
+export const deleteBook = (_: any, { id }: Args, { clients: { book: booksClient } }: Context) => booksClient.delete(id);

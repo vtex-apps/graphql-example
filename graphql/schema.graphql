@@ -8,7 +8,7 @@ type Book {
 }
 
 type StoreTemplatedCard {
-  _id: ID!
+  id: ID!
   image: String
   title: String
 }
@@ -25,8 +25,7 @@ input BookInput {
 type Query {
   # Cache control can only be set at root fields
   book(id: ID!): Book
-  books(from: Int = 0, to: Int = 4): [Book]
-    @cacheControl(scope: PUBLIC, maxAge: SHORT)
+  books(from: Int = 0, to: Int = 4): [Book] @cacheControl(scope: PUBLIC, maxAge: SHORT)
   total: Int
   storeTemplatedCards: [StoreTemplatedCard]
 

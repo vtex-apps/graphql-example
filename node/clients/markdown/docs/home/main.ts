@@ -44,4 +44,4 @@ export default `
 
   ### What if I didn't understand something ?
   If you didn't understand something or if you think this doc is incomplete, please open an issue in GitHub!
-`
+`;

@@ -13,4 +13,4 @@ export default `
   We can deliver a better user experience by previewing the edition component with the already present book's name in the browser's cache.
 
   To make our code more simple, we do not allow the edition of any of the book's properties before the query bringing the whole book info is completed, so the preview info is shown with the input disabled.
-`
+`;

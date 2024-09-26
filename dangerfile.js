@@ -1,5 +1,5 @@
 // dangerfile.js
-const { verify } = require('@vtex/danger')
+const { verify } = require('@vtex/danger');
 
 const config = {
   // Set to true to enforce keepachangelog rules.
@@ -16,6 +16,6 @@ const config = {
     no_debugger: ['fail', { pattern: /\.[tj]sx?$/i }],
     enforce_graphql_provider: 'off',
   },
-}
+};
 
-verify(config)
+verify(config);

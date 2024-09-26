@@ -1,4 +1,4 @@
-import type { Book } from '../../typings/custom'
+import type { Book } from '../../typings/custom';
 
 const mock: Book[] = [
   {
@@ -76,6 +76,6 @@ const mock: Book[] = [
     id: '24',
     name: 'Default Book 25',
   },
-]
+];
 
-export default mock
+export default mock;

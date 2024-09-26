@@ -10,4 +10,4 @@ export default `
   One important hint is using the \`buildCacheLocator\` function exported by \`render\`. This function takes as input the app id, the type and id of the fragment,and generates the Apollo Client's InMemory cache ID of the object we want to read the fragment from.
 
   When the book's query finishes loading, its data is used for rendering the final component.
-`
+`;

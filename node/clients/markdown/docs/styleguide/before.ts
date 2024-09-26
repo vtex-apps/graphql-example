@@ -23,4 +23,4 @@ export default `
   \`\`\`
 
   The code above is shown running below:
-`
+`;

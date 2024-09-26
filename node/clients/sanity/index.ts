@@ -1,26 +1,41 @@
-import type { InstanceOptions, IOContext } from '@vtex/api'
-import { ExternalClient } from '@vtex/api'
-import { createClient } from '@sanity/client'
-import type { ClientConfig } from '@sanity/client'
+import type { InstanceOptions, IOContext } from '@vtex/api';
+import { ExternalClient } from '@vtex/api';
+
+// type StoreTemplateCard = {
+//   _id: string
+//   _rev: string
+//   _type: string
+//   _updatedAt: string
+//   _createdAt: string
+//   title: string
+//   image: {
+//     _type: string
+//     asset: {
+//       _ref: string
+//       _type: string
+//     }
+//   }
+// }
+
+// type StoreTemplatedCardResult = {
+//   query: string
+//   result: [StoreTemplateCard]
+// }
 
 export class SanityClient extends ExternalClient {
-  private config: ClientConfig = {
-    projectId: 'mfaylecy',
-    dataset: 'test',
-    useCdn: true, // set to `false` to bypass the edge cache
-    apiVersion: '2024-09-25', // use current date (YYYY-MM-DD) to target the latest API version
-    // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
-  }
-
-  private client = createClient(this.config)
-
   constructor(context: IOContext, options?: InstanceOptions) {
-    super('', context, options)
+    super(`https://mfaylecy.api.sanity.io/v2024-09-25/data/query/test`, context, options);
   }
 
   public async storeTemplatedCards() {
-    const cards = await this.client.fetch('*[_type == "storeTemplatedCard"]')
+    // const cards = await this.http.get('?query=*[_type=="storeTemplatedCard"]')
 
-    return cards
+    return [
+      {
+        id: 'teste',
+        image: 'image',
+        title: 'this is a title',
+      },
+    ];
   }
 }

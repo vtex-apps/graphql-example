@@ -1,3 +1,2 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const storeTemplatedCards = (_: any, { clients: { sanity } }: Context) =>
-  sanity.storeTemplatedCards()
+export const storeTemplatedCards = async (_: any, { clients }: Context) => clients.sanity.storeTemplatedCards();

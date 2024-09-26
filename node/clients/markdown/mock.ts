@@ -1,12 +1,12 @@
-import automaticCacheUpdates from './docs/automaticCacheUpdates'
-import dynamicPagination from './docs/dynamicPagination'
-import home from './docs/home'
-import previewWithCachedData from './docs/previewWithCachedData'
-import staticPagination from './docs/staticPagination'
-import styleguide from './docs/styleguide'
+import automaticCacheUpdates from './docs/automaticCacheUpdates';
+import dynamicPagination from './docs/dynamicPagination';
+import home from './docs/home';
+import previewWithCachedData from './docs/previewWithCachedData';
+import staticPagination from './docs/staticPagination';
+import styleguide from './docs/styleguide';
 
 interface MarkdownData {
-  [key: string]: string
+  [key: string]: string;
 }
 
 const mock: MarkdownData = {
@@ -21,6 +21,6 @@ const mock: MarkdownData = {
   'static-pagination/before': staticPagination.before,
   'styleguide/after': styleguide.after,
   'styleguide/before': styleguide.before,
-}
+};
 
-export default mock
+export default mock;

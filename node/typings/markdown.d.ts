@@ -1,5 +1,5 @@
 declare module '*.md' {
-  const content = ''
+  const content = '';
 
-  export default content
+  export default content;
 }

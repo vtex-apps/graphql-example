@@ -8,4 +8,4 @@ export default `
   The result of the mutation updates the book object under the key given by the returned cacheId. Since the object under the cacheId key was changed, when clicking in the back button and rerendering the book list, the list will be reconstructed with the new data, thus changing the rendered book info.
 
   Note that this feature can replace the use of Redux in most applications. Also, the name of the field cacheId is a convention and has to be respected
-`
+`;

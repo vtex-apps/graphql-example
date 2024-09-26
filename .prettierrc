@@ -1,1 +1,5 @@
-"@vtex/prettier-config"
+{
+  "singleQuote": true,
+  "printWidth": 200,
+  "endOfLine": "auto"
+}

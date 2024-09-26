@@ -1,7 +1,7 @@
 {
   "name": "sanity-resolver",
-  "vendor": "logicinfopartnerbr",
-  "version": "0.0.0-beta",
+  "vendor": "ronadev",
+  "version": "1.0.0-beta",
   "title": "Sanity Graphql Resolver",
   "description": "Sanity app for VTEX IO GraphQL Service",
   "mustUpdateAt": "2022-01-04",
@@ -29,7 +29,8 @@
     {
       "name": "outbound-access",
       "attrs": {
-        "host": "*.api.sanity.io/*"
+        "host": "mfaylecy.api.sanity.io",
+        "path": "/*"
       }
     }
   ],

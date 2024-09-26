@@ -11,3 +11,9 @@ export interface BookInput {
 }
 
 export type Maybe<T> = T | void;
+
+export interface StoreTemplateCard {
+  id: string;
+  image: string;
+  title: string;
+}

@@ -1,43 +1,46 @@
-# To really understand GraphQL, go to https://graphql.org/learn/
+type Asset {
+  _ref: String
+  _type: String
+}
 
-type Book {
-  authors: [String!]
-  cacheId: ID!
-  id: ID!
-  name: String
+type Image {
+  _type: String
+  asset: Asset
+}
+
+type MarkDef {
+  _key: ID
+  _type: String
+  href: String
+}
+
+type Span {
+  _key: ID
+  _type: String
+  marks: [ID]
+  text: String
+}
+
+type Block {
+  _key: ID
+  _type: String
+  style: String
+  markDefs: [MarkDef]
+  children: [Span]
 }
 
 type StoreTemplatedCard {
-  id: ID!
-  image: String
+  _id: ID!
+  cacheId: ID!
+  _createdAt: String
+  _updatedAt: String
+  _rev: String
+  _type: String
+  image: Image
   title: String
-}
-
-# It is necessary to generate input types for creating books
-# ref: http://graphql.org/graphql-js/mutations-and-input-types/
-input BookInput {
-  authors: [String!]
-  cacheId: ID
-  id: ID
-  name: String
+  details: [Block]
 }
 
 type Query {
-  # Cache control can only be set at root fields
-  book(id: ID!): Book
-  books(from: Int = 0, to: Int = 4): [Book] @cacheControl(scope: PUBLIC, maxAge: SHORT)
-  total: Int
-  storeTemplatedCards: [StoreTemplatedCard]
-
-  """
-  Returns a markdown source given an id
-  """
-  source(id: ID!): String
-}
-
-type Mutation {
-  # You should always return the whole object in a mutation, not only a boolean. This will help in browser caching
-  delete(id: String): Boolean
-  editBook(id: ID!, book: BookInput!): Book
-  newBook(book: BookInput!): Book
+  storeTemplatedCards: [StoreTemplatedCard] @cacheControl(scope: PUBLIC, maxAge: LONG)
 }

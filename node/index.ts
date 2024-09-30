@@ -3,6 +3,7 @@ import { LRUCache, Service } from '@vtex/api';
 
 import { Clients } from './clients';
 import { storeTemplatedCards } from './resolvers/storeTemplatedCards';
+import { footer } from './resolvers/footer';
 
 const MEDIUM_TIMEOUT_MS = 2 * 1000;
 
@@ -35,6 +36,7 @@ export default new Service({
     resolvers: {
       Query: {
         storeTemplatedCards,
+        footer,
       },
     },
   },

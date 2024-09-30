@@ -29,18 +29,7 @@ type Block {
   children: [Span]
 }
 
-type StoreTemplatedCard {
-  _id: ID!
-  cacheId: ID!
-  _createdAt: String
-  _updatedAt: String
-  _rev: String
-  _type: String
-  image: Image
-  title: String
-  details: [Block]
-}
-
 type Query {
   storeTemplatedCards: [StoreTemplatedCard] @cacheControl(scope: PUBLIC, maxAge: LONG)
+  footer: [Footer] @cacheControl(scope: PUBLIC, maxAge: LONG)
 }

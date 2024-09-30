@@ -1,0 +1,40 @@
+type FeaturedInformation {
+  _key: ID!
+  _type: String
+  title: String
+  subtitle: String
+  callToAction: String
+  icon: Image
+  segmentation: SegmentationReference
+}
+
+type IconContent {
+  _key: ID!
+  _type: String
+  title: String
+  icon: Image
+  segmentation: SegmentationReference
+}
+
+type LinkList {
+  _key: ID!
+  _type: String
+  title: String
+  links: [SegmentableLink]
+}
+
+type Footer {
+  _id: ID!
+  _rev: String
+  _updatedAt: String
+  _createdAt: String
+  _type: String
+  title: String
+  logo: Image
+  featuredInformation: [FeaturedInformation]
+  featuredInformationSecondRow: [FeaturedInformation]
+  linkLists: [LinkList]
+  paymentProviders: [IconContent]
+  socialMedia: [IconContent]
+  licenceInformation: SegmentableTextBlock
+}

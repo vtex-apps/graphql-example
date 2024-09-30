@@ -1,0 +1,11 @@
+type StoreTemplatedCard {
+  _id: ID!
+  cacheId: ID!
+  _createdAt: String
+  _updatedAt: String
+  _rev: String
+  _type: String
+  image: Image
+  title: String
+  details: [Block]
+}

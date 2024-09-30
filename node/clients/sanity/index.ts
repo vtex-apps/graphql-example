@@ -17,7 +17,7 @@ type StoreTemplateCard = {
   };
 };
 
-type StoreTemplatedCardResult = {
+type QueryResult = {
   query: string;
   result: [StoreTemplateCard];
 };
@@ -27,9 +27,19 @@ export class SanityClient extends ExternalClient {
     super(`https://mfaylecy.api.sanity.io/v2024-09-25/data/query/test`, context, options);
   }
 
-  public async storeTemplatedCards(): Promise<[StoreTemplateCard]> {
-    const cards = await this.http.get<StoreTemplatedCardResult>('?query=*[_type=="storeTemplatedCard"]');
+  private getSanityContent(query: string): Promise<QueryResult> {
+    return this.http.get(`?query=${query}`);
+  }
 
-    return cards.result;
+  public async storeTemplatedCards(): Promise<[StoreTemplateCard]> {
+    const content = await this.getSanityContent('*[_type=="storeTemplatedCard"]');
+
+    return content.result;
+  }
+
+  public async footer(): Promise<[StoreTemplateCard]> {
+    const content = await this.getSanityContent('*[_type=="footer"]');
+
+    return content.result;
   }
 }

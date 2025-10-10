@@ -19,18 +19,25 @@ input BookInput {
 type Query {
   # Cache control can only be set at root fields
   book(id: ID!): Book
+  @auth(scope: PUBLIC)
   books(from: Int = 0, to: Int = 4): [Book] @cacheControl(scope: PUBLIC, maxAge: SHORT)
+  @auth(scope: PUBLIC)
   total: Int
+  @auth(scope: PUBLIC)
 
   """
   Returns a markdown source given an id
   """
   source(id: ID!): String
+  @auth(scope: PUBLIC)
 }
 
 type Mutation {
   # You should always return the whole object in a mutation, not only a boolean. This will help in browser caching
   delete(id: String): Boolean
+  @auth(scope: PUBLIC)
   editBook(id: ID!, book: BookInput!): Book
+  @auth(scope: PUBLIC)
   newBook(book: BookInput!): Book
+  @auth(scope: PUBLIC)
 }

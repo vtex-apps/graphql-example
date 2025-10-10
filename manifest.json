@@ -9,8 +9,8 @@
   "dependencies": {},
   "builders": {
     "docs": "0.x",
-    "graphql": "1.x",
-    "node": "6.x"
+    "graphql": "2.x",
+    "node": "7.x"
   },
   "scripts": {
     "prereleasy": "bash lint.sh"
